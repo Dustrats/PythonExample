@@ -3,15 +3,14 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
+#local path
 df = pd.read_parquet("C:\Python\PyEx\employees_raw.parquet")
 
-#print("Hej")
+#Viya path
+#df = pd.read_parquet("/data/home/shared/parquet/employees_raw.parquet")
 
-#print(df.head(15))
 
 subset = df[["salary", "satisfaction_score", "project_completion_rate"]]
-
-#print(subset.head(15))
 
 y = df[["left_company"]]
 x = subset
