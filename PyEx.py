@@ -20,6 +20,8 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 model = LogisticRegression()
 model.fit(X_train, np.ravel(y_train))
 
-preds = model.predict(X_test)
+y_proba = model.predict_proba(X_test)[:,1]
+
+preds = y_proba.round(2) 
 
 print(preds[:15])
